@@ -1,0 +1,13 @@
+//Custom stuff
+$primary: #53738c;
+$warning: #f7eda3;
+
+$box-radius: 0px;
+$box-shadow: 0 0.2em 1em -0.125em rgba(#666, 0.1), 0 0px 0 1px rgba(#666, 0.02);
+
+.is-link{
+    background-color: $primary !important;
+}
+
+//BUlMA
+@import '~bulma';
