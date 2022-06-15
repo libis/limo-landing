@@ -56,8 +56,10 @@
       <div class="libraries columns is-multiline">
         <div v-for="institution in filterByTerm" :key="institution.id" class="column is-3">
           <div class="box">
-            <img style="height:50px;" :src="'https://limo.libis.be/primo-explore/custom/'+institution.vid+'/img/library-logo.png'">
-            <div style="height:50px;" class="block">
+            <img v-if="!institution.fullurl" style="height:50px;" :src="'https://'+institution.code+'.limo.libis.be/discovery/custom/'+institution.vidve.replace(':','-')+'/img/library-logo.png'">
+           <img v-if="institution.fullurl" style="height:50px;" :src="institution.fullurl+institution.vidve+'/img/library-logo.png'">
+           
+           <div style="height:50px;" class="block">
               <h2 class="title is-6 my-3">
                 <a v-if="!institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="'https://'+institution.code+'.limo.libis.be/discovery/search?vid='+institution.vidve">{{ institution.name }}</a>
                 <a v-if="institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="institution.fullurl">{{ institution.name }}</a>
@@ -147,16 +149,16 @@ export default {
             {group: 'libisnet', inst_group: '', sort: '', name: 'AB', code: 'AB', vid: 'AB', width: '60px', display: false, vidve:'32KUL_KHL:UCLL',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name: 'ACV', code: 'ACV', vid: 'ACV', width: '60px', display: true, vidve:'32KUL_ACV:ACV',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name: 'Federale Parlement fédéral', code: 'BPB', vid: 'BPB', width: '180px', display: true, vidve:'32KUL_BPB:BPB',fullurl:''},
-            {group: 'libisnet', inst_group: '', sort: '', name: 'FARO', code: 'FARO', vid: 'FARO', width: '60px', display: true, vidve:'32KUL_BPB:BPB',fullurl:''},
+            {group: 'libisnet', inst_group: '', sort: '', name: 'FARO', code: 'FARO', vid: 'FARO', width: '60px', display: true, vidve:'32KUL_VCV:FARO',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name: 'Federale Overheidsdienst Financiën', code: 'fin', vid: 'FODFIN', width:'120px', display: true, vidve:'32KUL_FIN:FODFIN',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name: 'IMEC', code: 'IMEC', vid: 'IMEC', width: '60px', display: true, vidve:'32KUL_IMEC:IMEC',fullurl:''},
-            {group: 'libisnet', inst_group: '', sort: '', name: 'KBC', code: 'KBC', vid: 'KBC', width: '60px', display: true, vidve:'32KUL_KBC:KBC',fullurl:'https://libis-kbc.primo.exlibrisgroup.com/discovery/search?vid=32KUL_KBC:KBC'},
+            {group: 'libisnet', inst_group: '', sort: '', name: 'KBC', code: 'KBC', vid: 'KBC', width: '60px', display: true, vidve:'32KUL_KBC:KBC',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name: 'Koninklijke Musea voor Kunst en Geschiedenis', code: 'KMKG', vid: 'KMKG', width: '90px', display: true, vidve:'32KUL_KMMR:KMKG',fullurl:''},
-            {group: 'kuleuven', inst_group: 'kulloc,KULeuven_regio)', sort: 0, name: 'KU Leuven, Campus Leuven, Kortrijk, Antwerpen, Brugge en Sint-Lucas Brussel en TDC Gent', code: 'KULeuven', vid: 'KULeuven', width: '80px', display: true, vidve:'32KUL_KUL:KUL',fullurl:'https://libis-kul.primo.exlibrisgroup.com/discovery/search?vid=32KUL_KUL:KULeuven'},
-            {group: 'kuleuven', inst_group: 'kulloc,KULeuven_regio', sort: 2, name: 'KU Leuven, Alle campussen', code: 'kul_all', vid: 'KULeuven', width: '80px', display: true, vidve:'32KUL_KUL:REGIONAL',fullurl:'https://libis-kul.primo.exlibrisgroup.com/discovery/search?vid=32KUL_KUL:REGIONAL'},
+            {group: 'kuleuven', inst_group: 'kulloc,KULeuven_regio)', sort: 0, name: 'KU Leuven, Campus Leuven, Kortrijk, Antwerpen, Brugge en Sint-Lucas Brussel en TDC Gent', code: 'KULeuven', vid: 'KULeuven', width: '80px', display: true, vidve:'32KUL_KUL:KULeuven',fullurl:''},
+            {group: 'kuleuven', inst_group: 'kulloc,KULeuven_regio', sort: 2, name: 'KU Leuven, Alle campussen', code: 'kuleuven', vid: 'KULeuven', width: '80px', display: true, vidve:'32KUL_KUL:REGIONAL',fullurl:''},
             {group: 'kuleuven', inst_group: '', sort: 7, name: 'LUCA School of Arts', code: 'LUCA', vid: 'LUCA', width: '80px', display: true, vidve:'32KUL_LUCAWENK:LUCA',fullurl:''},
             {group: 'kuleuven', inst_group: 'hub_kaho', sort: 8, name: 'Odisee', code: 'ODISEE', vid: 'ODISEE', width: '80px', display: true, vidve:'32KUL_HUB:ODISEE',fullurl:''},
-            {group: 'kuleuven', inst_group: 'tmore', sort: 10, name: 'Thomas More Geel, Lier, Turnhout, Vorselaar', code: 'kempen.thomasmore', vid: 'TMOREK', width: '80px', display: true, vidve:'32KUL_KHK:TMOREK',fullurl:'https://libis-khk.primo.exlibrisgroup.com/discovery/search?vid=32KUL_KHK:TMOREK'},
+            {group: 'kuleuven', inst_group: 'tmore', sort: 10, name: 'Thomas More Geel, Lier, Turnhout, Vorselaar', code: 'kempen.thomasmore', vid: 'TMOREK', width: '80px', display: true, vidve:'32KUL_KHK:TMOREK',fullurl:''},
             {group: 'kuleuven', inst_group: 'tmore', sort: 11, name: 'Thomas More Antwerpen, Mechelen, Sint-Katelijne-waver', code: 'mechelen-antwerpen.thomasmore', vid: 'TMOREM', width: '80px', display: true, vidve:'32KUL_KHM:TMOREMA',fullurl:''},
             {group: 'kuleuven', inst_group: 'ucll', sort: 12, name: 'UCLL', code: 'UCLL', vid: 'UCLL', width: '80px', display: true, vidve:'32KUL_KHL:UCLL',fullurl:''},
             {group: 'kuleuven', inst_group: 'vives', sort: 14, name: 'VIVES', code: 'VIVES', vid: 'VIVES', width: '80px', display: true, vidve:'32KUL_KATHO:VIVES',fullurl:''},
@@ -172,9 +174,9 @@ export default {
             {group: 'libisnet', inst_group: '', sort: '', name: 'European Central Bank', code: 'ECB', vid: 'ECB', width: '120px', display: true, vidve:'49ECB_INST:ECB',fullurl:'https://ecb-europea-psb.primo.exlibrisgroup.com/discovery/search?vid=49ECB_INST:ECB'},
             //{group: 'libisnet', inst_group: 'music', sort: '', name: 'Muziekcatalogus [LUCA]', code: 'LUCA_MUSIC', vid: 'LUCA_MUSIC', width: '200px', display: true},
             //{group: 'libisnet', inst_group: 'music', sort: '', name: 'Muziekcatalogus [KU Leuven]', code: 'KULEUVEN_MUSIC', vid: 'KULEUVEN_MUSIC', width: '200px', display: true},
-            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'Lirias', code: 'Lirias', vid: 'Lirias', width: '90px', display: true, vidve:'32KUL_KUL:Lirias',fullurl:'https://libis-khk-psb.alma.exlibrisgroup.com/discovery/search?vid=32KUL_KUL:Lirias'},
-            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'DokS', code: 'DOKS', vid: 'DOKS', width: '80px', display: true, vidve:'32KUL_DOKS:DOKS',fullurl:''},
-            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'Jesuit Armarium', code: 'JESUITS', vid: 'JESUITS', width: '80px', display: true, vidve:'32KUL_JESUITS:JESUITS',fullurl:''},
+            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'Lirias', code: 'kuleuven', vid: 'Lirias', width: '90px', display: true, vidve:'32KUL_KUL:Lirias',fullurl:''},
+            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'DokS', code: 'kuleuven', vid: 'DOKS', width: '80px', display: true, vidve:'32KUL_DOKS:DOKS',fullurl:''},
+            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'Jesuit Armarium', code: 'kadoc', vid: 'JESUITS', width: '80px', display: true, vidve:'32KUL_JESUITS:JESUITS',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name: 'Documentatiecentrum Vlaams Brabant', code: 'docvlaamsbrabant', vid: 'docvlaamsbrabant', width: '80px', display: true, vidve:'32KUL_DOCVB:docvlaamsbrabant',fullurl:''},
 
 
