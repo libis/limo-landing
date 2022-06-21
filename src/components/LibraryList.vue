@@ -56,9 +56,9 @@
       <div class="libraries columns is-multiline">
         <div v-for="institution in filterByTerm" :key="institution.id" class="column is-3">
           <div class="box">
-            <img v-if="!institution.fullurl" style="height:50px;" :src="'https://'+institution.code+'.limo.libis.be/discovery/custom/'+institution.vidve.replace(':','-')+'/img/library-logo.png'">
-           <img v-if="institution.fullurl" style="height:50px;" :src="institution.fullurl+institution.vidve+'/img/library-logo.png'">
-           
+           <img v-if="institution.name == 'European Central Bank'" src="https://ecb-europea-psb.primo.exlibrisgroup.com/discovery/custom/thumbnails/thumbnail_49ECB_INST-ECB.png">
+           <img v-if="institution.name != 'European Central Bank'" style="height:50px;" :src="'https://'+institution.code+'.limo.libis.be/discovery/custom/'+institution.vidve.replace(':','-')+'/img/library-logo.png'">
+          
            <div style="height:50px;" class="block">
               <h2 class="title is-6 my-3">
                 <a v-if="!institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="'https://'+institution.code+'.limo.libis.be/discovery/search?vid='+institution.vidve">{{ institution.name }}</a>
@@ -175,8 +175,8 @@ export default {
             //{group: 'libisnet', inst_group: 'music', sort: '', name: 'Muziekcatalogus [LUCA]', code: 'LUCA_MUSIC', vid: 'LUCA_MUSIC', width: '200px', display: true},
             //{group: 'libisnet', inst_group: 'music', sort: '', name: 'Muziekcatalogus [KU Leuven]', code: 'KULEUVEN_MUSIC', vid: 'KULEUVEN_MUSIC', width: '200px', display: true},
             {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'Lirias', code: 'kuleuven', vid: 'Lirias', width: '90px', display: true, vidve:'32KUL_KUL:Lirias',fullurl:''},
-            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'DokS', code: 'kuleuven', vid: 'DOKS', width: '80px', display: true, vidve:'32KUL_DOKS:DOKS',fullurl:''},
-            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'Jesuit Armarium', code: 'kadoc', vid: 'JESUITS', width: '80px', display: true, vidve:'32KUL_JESUITS:JESUITS',fullurl:''},
+            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'DokS', code: 'kuleuven', vid: 'DOKS', width: '80px', display: true, vidve:'32KUL_LIBIS_NETWORK:DOKS',fullurl:''},
+            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'Jesuit Armarium', code: 'kadoc', vid: 'JESUITS', width: '80px', display: true, vidve:'32KUL_KUL:JESUITS',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name: 'Documentatiecentrum Vlaams Brabant', code: 'docvlaamsbrabant', vid: 'docvlaamsbrabant', width: '80px', display: true, vidve:'32KUL_DOCVB:docvlaamsbrabant',fullurl:''},
 
 
