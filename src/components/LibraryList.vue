@@ -1,13 +1,11 @@
 <template>
   <section class="section" style="background:#4f6e86;padding-bottom:1rem;">
     <div class="container" >
-      <img alt="Vue logo" src="./../assets/limo.png">     
-    </div>
-    
+      <img alt="Vue logo" :src="require('@/assets/logos/limo.png')">     
+    </div>    
   </section>
   <section class="section" style="background:#f5f5f5;padding-top:1rem;">
-    <div class="container">
-      
+    <div class="container">      
         <div class="level">
         <div class="level-left">        
           <div class="level-item">
@@ -18,7 +16,6 @@
                   <i class="fas fa-search"></i>
                 </span>
               </p>
-
               <button class="button" @click="sort('name')" v-bind:class="[sort_by === 'name' ? sort_dir : '']" style="border-radius:0;">
                 <span class="icon is-small is-left">
                   <i v-if="sort_dir == 'asc'" class="fas fa-sort-alpha-down" aria-label="Sort ascending"></i>
@@ -26,15 +23,14 @@
                 </span>
               </button>
             </div>  
-          </div>          
-          
+          </div>         
         </div>
         <div class="level-right">
           <div class="level-item">
             <div class="buttons">
-              <a @click="settag('kuleuven')" class="button is-primary" v-bind:class="{ 'is-outlined':  this.tag  != 'kuleuven'}">KU Leuven Associatie</a>
-              <a @click="settag('libisnet')" class="button is-primary" v-bind:class="{ 'is-outlined':  this.tag  != 'libisnet' }">Andere</a>
-              <a @click="settag('All')" class="button is-primary" v-bind:class="{ 'is-outlined':  this.tag  != '' }">Alles</a>
+              <a @click="settag('kuleuven')" class="button is-primary" v-bind:class="{ 'is-outlined':  this.tag  != 'kuleuven'}">KU Leuven Association</a>
+              <a @click="settag('libisnet')" class="button is-primary" v-bind:class="{ 'is-outlined':  this.tag  != 'libisnet' }">Other</a>
+              <a @click="settag('All')" class="button is-primary" v-bind:class="{ 'is-outlined':  this.tag  != '' }">All</a>
             </div>
           </div>
         </div>
@@ -43,11 +39,17 @@
         <div class="level-left">     
           <div class="level-item">
             <div class="block">              
-              <a class="has-text-weight-semibold button is-warning" href="">       
+              <a  v-if="!fave.fullurl" class="has-text-weight-semibold button is-warning" :href="'https://'+fave.code+'.limo.libis.be/discovery/search?vid='+fave.vidve">       
                 <span class="icon" ><i class="fas fa-star"></i></span>         
-                <span><span style="font-weight:300;margin-right:0.5rem;">Laatst bezocht: </span>
-                {{ fave.name }}</span>
-                
+                <span><span style="font-weight:300;margin-right:0.5rem;">Last visited: </span>                  
+                  {{ fave.name }}        
+                </span>                
+              </a>
+              <a v-if="fave.fullurl" class="has-text-weight-semibold button is-warning" :href="fave.fullurl">
+                <span class="icon" ><i class="fas fa-star"></i></span>         
+                <span><span style="font-weight:300;margin-right:0.5rem;">Last visited: </span>                  
+                  {{ fave.name }}        
+                </span>                
               </a>
             </div>
           </div>
@@ -56,14 +58,13 @@
       <div class="libraries columns is-multiline">
         <div v-for="institution in filterByTerm" :key="institution.id" class="column is-3">
           <div class="box">
-           <img v-if="institution.name == 'European Central Bank'" src="https://ecb-europea-psb.primo.exlibrisgroup.com/discovery/custom/thumbnails/thumbnail_49ECB_INST-ECB.png">
-           <img v-if="institution.name != 'European Central Bank'" style="height:50px;" :src="'https://'+institution.code+'.limo.libis.be/discovery/custom/'+institution.vidve.replace(':','-')+'/img/library-logo.png'">
-          
-           <div style="height:50px;" class="block">
+            <a v-if="!institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="'https://'+institution.code+'.limo.libis.be/discovery/search?vid='+institution.vidve"><img style="height:50px;" :src="require('@/assets/logos/'+institution.vid+'.png')"></a>
+            <a v-if="institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="institution.fullurl"><img style="height:50px;" :src="require('@/assets/logos/'+institution.vid+'.png')"></a>
+                     
+            <div style="height:50px;" class="block">
               <h2 class="title is-6 my-3">
                 <a v-if="!institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="'https://'+institution.code+'.limo.libis.be/discovery/search?vid='+institution.vidve">{{ institution.name }}</a>
                 <a v-if="institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="institution.fullurl">{{ institution.name }}</a>
-               
               </h2>
             </div>
           </div>
@@ -106,7 +107,7 @@ export default {
     setLastVisited(institution){
       localStorage.fave = JSON.stringify(institution);
       this.fave = institution;
-    }
+    },
   },
 
   computed: {
@@ -155,7 +156,7 @@ export default {
             {group: 'libisnet', inst_group: '', sort: '', name: 'KBC', code: 'KBC', vid: 'KBC', width: '60px', display: true, vidve:'32KUL_KBC:KBC',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name: 'Koninklijke Musea voor Kunst en Geschiedenis', code: 'KMKG', vid: 'KMKG', width: '90px', display: true, vidve:'32KUL_KMMR:KMKG',fullurl:''},
             {group: 'kuleuven', inst_group: 'kulloc,KULeuven_regio)', sort: 0, name: 'KU Leuven, Campus Leuven, Kortrijk, Antwerpen, Brugge en Sint-Lucas Brussel en TDC Gent', code: 'KULeuven', vid: 'KULeuven', width: '80px', display: true, vidve:'32KUL_KUL:KULeuven',fullurl:''},
-            {group: 'kuleuven', inst_group: 'kulloc,KULeuven_regio', sort: 2, name: 'KU Leuven, Alle campussen', code: 'kuleuven', vid: 'KULeuven', width: '80px', display: true, vidve:'32KUL_KUL:REGIONAL',fullurl:''},
+            {group: 'kuleuven', inst_group: 'kulloc,KULeuven_regio', sort: 2, name: 'KU Leuven incl. gemengde campussen', code: 'kuleuven', vid: 'KULeuvenRegional', width: '80px', display: true, vidve:'32KUL_KUL:REGIONAL',fullurl:''},
             {group: 'kuleuven', inst_group: '', sort: 7, name: 'LUCA School of Arts', code: 'LUCA', vid: 'LUCA', width: '80px', display: true, vidve:'32KUL_LUCAWENK:LUCA',fullurl:''},
             {group: 'kuleuven', inst_group: 'hub_kaho', sort: 8, name: 'Odisee', code: 'ODISEE', vid: 'ODISEE', width: '80px', display: true, vidve:'32KUL_HUB:ODISEE',fullurl:''},
             {group: 'kuleuven', inst_group: 'tmore', sort: 10, name: 'Thomas More Geel, Lier, Turnhout, Vorselaar', code: 'kempen.thomasmore', vid: 'TMOREK', width: '80px', display: true, vidve:'32KUL_KHK:TMOREK',fullurl:''},
@@ -168,16 +169,16 @@ export default {
             {group: 'libisnet', inst_group: '', sort: '', name: 'Koninklijk Museum voor Midden-Afrika', code: 'RMCA', vid: 'RMCA', width: '60px', display: true, vidve:'32KUL_RMCA:RMCA',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name: 'Vesalius Documentation and Information Center', code: 'VDIC', vid: 'VDIC', width: '100px', display: true, vidve:'32KUL_VES:VDIC',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name: 'Parlementair Informatiecentrum van het Vlaams Parlement', code: 'VLP', vid: 'VLP', width: '100px', display: true, vidve:'32KUL_VLP:VLP',fullurl:''},
-            {group: 'libisnet', inst_group: 'reli', sort: '', name: 'Documentatie- en Onderzoekscentrum voor Religie, Cultuur en Samenleving', code: 'KADOC', vid: 'KADOC', width: '80px', display: true, vidve:'32KUL_KADOC:KADOC',fullurl:''},
+            {group: 'libisnet', inst_group: 'reli', sort: '', name: 'Documentatie- en Onderzoekscentrum voor Religie, Cultuur en Samenleving', code: 'KADOC', vid: 'KADOC', width: '80px', display: true, vidve:'32KUL_KADOC:KADOC',fullurl:'http://limo.libis.be/KADOC'},
             {group: 'libisnet', inst_group: 'reli', sort: '', name: 'Grootseminarie Gent', code: 'GSG', vid: 'GSG', width: '60px', display: true, vidve:'32KUL_GSG:GSG',fullurl:''},
             {group: 'libisnet', inst_group: 'reli', sort: '', name: 'Grootseminarie Brugge', code: 'GSB', vid: 'GSB', width: '30px', display: true, vidve:'32KUL_GSB:GSB',fullurl:''},
-            {group: 'libisnet', inst_group: '', sort: '', name: 'European Central Bank', code: 'ECB', vid: 'ECB', width: '120px', display: true, vidve:'49ECB_INST:ECB',fullurl:'https://ecb-europea-psb.primo.exlibrisgroup.com/discovery/search?vid=49ECB_INST:ECB'},
-            //{group: 'libisnet', inst_group: 'music', sort: '', name: 'Muziekcatalogus [LUCA]', code: 'LUCA_MUSIC', vid: 'LUCA_MUSIC', width: '200px', display: true},
-            //{group: 'libisnet', inst_group: 'music', sort: '', name: 'Muziekcatalogus [KU Leuven]', code: 'KULEUVEN_MUSIC', vid: 'KULEUVEN_MUSIC', width: '200px', display: true},
+            {group: 'libisnet', inst_group: '', sort: '', name: 'European Central Bank', code: 'ECB', vid: 'ECB', width: '120px', display: true, vidve:'49ECB_INST:ECB',fullurl:'http://limo.libis.be/ECB'},
+            {group: 'libisnet', inst_group: 'music', sort: '', name: 'Muziekcatalogus [LUCA]', code: 'lucawenk', vid: 'LUCA_MUSIC', width: '200px', display: true,vidve:'32KUL_LUCAWENK:LUCA_MUSIC',fullurl:'http://limo.libis.be/LUCA_MUSIC'},
+            {group: 'libisnet', inst_group: 'music', sort: '', name: 'Muziekcatalogus [KU Leuven]', code: 'kuleuven', vid: 'KULEUVEN_MUSIC', width: '200px', display: true,vidve:'32KUL_KUL:KULeuven_music',fullurl:'http://limo.libis.be/KULEUVEN_MUSIC'},
             {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'Lirias', code: 'kuleuven', vid: 'Lirias', width: '90px', display: true, vidve:'32KUL_KUL:Lirias',fullurl:''},
-            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'DokS', code: 'kuleuven', vid: 'DOKS', width: '80px', display: true, vidve:'32KUL_LIBIS_NETWORK:DOKS',fullurl:''},
-            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'Jesuit Armarium', code: 'kadoc', vid: 'JESUITS', width: '80px', display: true, vidve:'32KUL_KUL:JESUITS',fullurl:''},
-            {group: 'libisnet', inst_group: '', sort: '', name: 'Documentatiecentrum Vlaams Brabant', code: 'docvlaamsbrabant', vid: 'docvlaamsbrabant', width: '80px', display: true, vidve:'32KUL_DOCVB:docvlaamsbrabant',fullurl:''},
+            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'DokS', code: 'kuleuven', vid: 'DOKS', width: '80px', display: true, vidve:'32KUL_LIBIS_NETWORK:DOKS_UNION',fullurl:'http://limo.libis.be/DOKS'},
+            {group: 'libisnet', inst_group: 'bibl', sort: '', name: 'Jesuit Armarium', code: 'kadoc', vid: 'JESUITS', width: '80px', display: true, vidve:'32KUL_KUL:JESUITS',fullurl:'http://limo.libis.be/JESUITS'},
+            {group: 'libisnet', inst_group: '', sort: '', name: 'Documentatiecentrum Vlaams-Brabant', code: 'docvlaamsbrabant', vid: 'docvlaamsbrabant', width: '80px', display: true, vidve:'32KUL_DOCVB:docvlaamsbrabant',fullurl:''},
 
 
         ]);
