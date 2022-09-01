@@ -159,7 +159,7 @@ export default {
             {group: 'kuleuven', inst_group: '', sort: 7, name_en: '', name: 'LUCA School of Arts', code: 'LUCA', vid: 'LUCA', width: '80px', display: true, vidve:'32KUL_LUCAWENK:LUCA',fullurl:''},
             {group: 'kuleuven', inst_group: 'hub_kaho', sort: 8, name_en: '', name: 'Odisee', code: 'ODISEE', vid: 'ODISEE', width: '80px', display: true, vidve:'32KUL_HUB:ODISEE',fullurl:''},
             {group: 'kuleuven', inst_group: 'tmore', sort: 10, name_en: '', name: 'Thomas More Geel, Lier, Turnhout, Vorselaar', code: 'kempen.thomasmore', vid: 'TMOREK', width: '80px', display: true, vidve:'32KUL_KHK:TMOREK',fullurl:''},
-            {group: 'kuleuven', inst_group: 'tmore', sort: 11, name_en: '', name: 'Thomas More Antwerpen, Mechelen, Sint-Katelijne-waver', code: 'mechelen-antwerpen.thomasmore', vid: 'TMOREM', width: '80px', display: true, vidve:'32KUL_KHM:TMOREMA',fullurl:''},
+            {group: 'kuleuven', inst_group: 'tmore', sort: 11, name_en: '', name: 'Thomas More Antwerpen, Mechelen, Sint-Katelijne-Waver', code: 'mechelen-antwerpen.thomasmore', vid: 'TMOREM', width: '80px', display: true, vidve:'32KUL_KHM:TMOREMA',fullurl:''},
             {group: 'kuleuven', inst_group: 'ucll', sort: 12, name_en: '', name: 'UCLL', code: 'UCLL', vid: 'UCLL', width: '80px', display: true, vidve:'32KUL_KHL:UCLL',fullurl:''},
             {group: 'kuleuven', inst_group: 'vives', sort: 14, name_en: '', name: 'VIVES', code: 'VIVES', vid: 'VIVES', width: '80px', display: true, vidve:'32KUL_KATHO:VIVES',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Nationale Bank van België', code: 'NBB', vid: 'NBB', width: '120px', display: true, vidve:'32KUL_NBB:NBB',fullurl:''},
