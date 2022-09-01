@@ -175,7 +175,7 @@ export default {
             {group: 'libisnet', inst_group: 'music', sort: '', name_en: '', name: 'Muziekcatalogus [LUCA]', code: 'lucawenk', vid: 'LUCA_MUSIC', width: '200px', display: true,vidve:'32KUL_LUCAWENK:LUCA_MUSIC',fullurl:'https://limo.libis.be/LUCA_MUSIC'},
             {group: 'libisnet', inst_group: 'music', sort: '', name_en: '', name: 'Muziekcatalogus [KU Leuven]', code: 'kuleuven', vid: 'KULEUVEN_MUSIC', width: '200px', display: true,vidve:'32KUL_KUL:KULeuven_music',fullurl:'https://limo.libis.be/KULEUVEN_MUSIC'},
             {group: 'libisnet', inst_group: 'bibl', sort: '', name_en: '', name: 'Lirias', code: 'kuleuven', vid: 'Lirias', width: '90px', display: true, vidve:'32KUL_KUL:Lirias',fullurl:''},
-            {group: 'libisnet', inst_group: 'bibl', sort: '', name_en: '', name: 'DokS', code: 'kuleuven', vid: 'DOKS', width: '80px', display: true, vidve:'32KUL_LIBIS_NETWORK:DOKS_UNION',fullurl:'https://limo.libis.be/DOKS'},
+            {group: 'libisnet', inst_group: 'bibl', sort: '', name_en: '', name: 'DokS', code: 'kuleuven', vid: 'DOKS', width: '80px', display: true, vidve:'32KUL_LIBIS_NETWORK:DOKS_UNION',fullurl:''},
             {group: 'libisnet', inst_group: 'bibl', sort: '', name_en: '', name: 'Jesuit Armarium', code: 'kadoc', vid: 'JESUITS', width: '80px', display: true, vidve:'32KUL_KUL:JESUITS',fullurl:'https://limo.libis.be/JESUITS'},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Documentatiecentrum Vlaams-Brabant', code: 'docvlaamsbrabant', vid: 'docvlaamsbrabant', width: '80px', display: true, vidve:'32KUL_DOCVB:docvlaamsbrabant',fullurl:''},
 
