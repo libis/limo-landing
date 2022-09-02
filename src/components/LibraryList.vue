@@ -61,7 +61,7 @@
             <a v-if="!institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="'https://'+institution.code+'.limo.libis.be/discovery/search?vid='+institution.vidve"><img style="height:50px;" :src="require('@/assets/logos/'+institution.vid+'.png')"></a>
             <a v-if="institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="institution.fullurl"><img style="height:50px;" :src="require('@/assets/logos/'+institution.vid+'.png')"></a>
                      
-            <div style="height:50px;" class="block">
+            <div style="height:65px;" class="block">
               <h2 class="title is-6 my-3">
                 <a v-if="!institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="'https://'+institution.code+'.limo.libis.be/discovery/search?vid='+institution.vidve">{{ institution.name }}</a>
                 <a v-if="institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="institution.fullurl">{{ institution.name }}</a>
@@ -154,8 +154,8 @@ export default {
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'IMEC', code: 'IMEC', vid: 'IMEC', width: '60px', display: true, vidve:'32KUL_IMEC:IMEC',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'KBC', code: 'KBC', vid: 'KBC', width: '60px', display: true, vidve:'32KUL_KBC:KBC',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Koninklijke Musea voor Kunst en Geschiedenis', code: 'KMKG', vid: 'KMKG', width: '90px', display: true, vidve:'32KUL_KMMR:KMKG',fullurl:''},
-            {group: 'kuleuven', inst_group: 'kulloc,KULeuven_regio)', sort: 0, name_en: '', name: 'Campus Leuven, Kortrijk, Antwerpen, Brugge, Sint-Lucas Brussel en Technisch Documentatiecentrum Gent – KU Leuven', code: 'KULeuven', vid: 'KULeuven', width: '80px', display: true, vidve:'32KUL_KUL:KULeuven',fullurl:'https://limo.libis.be/kuleuvencampussen'},
-            {group: 'kuleuven', inst_group: 'kulloc,KULeuven_regio', sort: 2, name_en: '', name: 'Campus Aalst, Brussel, De Nayer, Geel, Diepenbeek, Sint-Lucasbibliotheek Gent en Technologiecampus Gent – KU Leuven', code: 'kuleuven', vid: 'KULeuvenRegional', width: '80px', display: true, vidve:'32KUL_KUL:REGIONAL',fullurl:''},
+            {group: 'kuleuven', inst_group: 'kulloc,KULeuven_regio)', sort: 0, name_en: '', name: 'Campus Leuven, Kortrijk, Antwerpen, Brugge, Sint-Lucas Brussel en Technisch Documentatiecentrum Gent', code: 'KULeuven', vid: 'KULeuven', width: '80px', display: true, vidve:'32KUL_KUL:KULeuven',fullurl:'https://limo.libis.be/kuleuvencampussen'},
+            {group: 'kuleuven', inst_group: 'kulloc,KULeuven_regio', sort: 2, name_en: '', name: 'Campus Aalst, Brussel, De Nayer, Geel, Diepenbeek, Sint-Lucasbibliotheek Gent en Technologiecampus Gent', code: 'kuleuven', vid: 'KULeuvenRegional', width: '80px', display: true, vidve:'32KUL_KUL:REGIONAL',fullurl:''},
             {group: 'kuleuven', inst_group: '', sort: 7, name_en: '', name: 'LUCA School of Arts', code: 'LUCA', vid: 'LUCA', width: '80px', display: true, vidve:'32KUL_LUCAWENK:LUCA',fullurl:''},
             {group: 'kuleuven', inst_group: 'hub_kaho', sort: 8, name_en: '', name: 'Odisee', code: 'ODISEE', vid: 'ODISEE', width: '80px', display: true, vidve:'32KUL_HUB:ODISEE',fullurl:''},
             {group: 'kuleuven', inst_group: 'tmore', sort: 10, name_en: '', name: 'Thomas More Geel, Lier, Turnhout, Vorselaar', code: 'kempen.thomasmore', vid: 'TMOREK', width: '80px', display: true, vidve:'32KUL_KHK:TMOREK',fullurl:''},
