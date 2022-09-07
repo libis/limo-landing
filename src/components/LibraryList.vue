@@ -38,14 +38,14 @@
       <div v-if="fave != ''" class="level" style="padding-top:0rem;">
         <div class="level-left">     
           <div class="level-item">
-            <div class="block">              
-              <a  v-if="!fave.fullurl" class="has-text-weight-semibold button is-warning" :href="'https://'+fave.code+'.limo.libis.be/discovery/search?vid='+fave.vidve">       
+            <div class="block" style="max-widh:100%;overflow: hidden;">              
+              <a  :title="fave.name" v-if="!fave.fullurl" class="has-text-weight-semibold button is-warning" :href="'https://'+fave.code+'.limo.libis.be/discovery/search?vid='+fave.vidve">       
                 <span class="icon" ><i class="fas fa-star"></i></span>         
                 <span><span style="font-weight:300;margin-right:0.5rem;">Last visited: </span>                  
                   {{ fave.name }}        
                 </span>                
               </a>
-              <a v-if="fave.fullurl" class="has-text-weight-semibold button is-warning" :href="fave.fullurl">
+              <a :title="fave.name" v-if="fave.fullurl" class="has-text-weight-semibold button is-warning" :href="fave.fullurl">
                 <span class="icon" ><i class="fas fa-star"></i></span>         
                 <span><span style="font-weight:300;margin-right:0.5rem;">Last visited: </span>                  
                   {{ fave.name }}        
@@ -56,15 +56,16 @@
         </div>
       </div>  
       <div class="libraries columns is-multiline">
-        <div v-for="institution in filterByTerm" :key="institution.id" class="column is-3">
+        <div v-for="institution in filterByTerm" :key="institution.id" class="column is-6-tablet is-3-widescreen is-4-desktop">
           <div class="box">
-            <a v-if="!institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="'https://'+institution.code+'.limo.libis.be/discovery/search?vid='+institution.vidve"><img style="height:50px;" :src="require('@/assets/logos/'+institution.vid+'.png')"></a>
-            <a v-if="institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="institution.fullurl"><img style="height:50px;" :src="require('@/assets/logos/'+institution.vid+'.png')"></a>
-                     
+            <div style="height:50px;" class="block">
+            <a :title="institution.name" v-if="!institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="'https://'+institution.code+'.limo.libis.be/discovery/search?vid='+institution.vidve"><img :alt="'logo' + institution.name" style="max-height:50px;" :src="require('@/assets/logos/'+institution.vid+'.png')"></a>
+            <a :title="institution.name" v-if="institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="institution.fullurl"><img :alt="'logo' + institution.name" style="height:50px;" :src="require('@/assets/logos/'+institution.vid+'.png')"></a>
+            </div>         
             <div style="height:65px;" class="block">
-              <h2 class="title is-6 my-3">
-                <a v-if="!institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="'https://'+institution.code+'.limo.libis.be/discovery/search?vid='+institution.vidve">{{ institution.name }}</a>
-                <a v-if="institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="institution.fullurl">{{ institution.name }}</a>
+              <h2 class="title is-6 my-3" style="font-size:0.9rem;">
+                <a :title="institution.name" v-if="!institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="'https://'+institution.code+'.limo.libis.be/discovery/search?vid='+institution.vidve">{{ institution.name }}</a>
+                <a :title="institution.name" v-if="institution.fullurl" class="has-text-primary" @click="setLastVisited(institution)" :href="institution.fullurl">{{ institution.name }}</a>
               </h2>
             </div>
           </div>
