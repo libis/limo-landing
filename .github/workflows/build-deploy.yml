@@ -12,4 +12,3 @@ jobs:
       username: ${{ secrets.LIBIS_DOCKER_REGISTRY_USER }}
       password: ${{ secrets.LIBIS_DOCKER_REGISTRY_PASSWORD }}
       msteams_webhook: ${{ secrets.MSTEAMS_WEBHOOK }}
-
