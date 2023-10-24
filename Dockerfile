@@ -1,19 +1,14 @@
-# Stage 1: Build the Node.js application
+######################## Build Stage: Node.js application #######################
 FROM node:14 AS builder
 
 WORKDIR /app
-
-#COPY package*.json ./
 COPY . .
-
 RUN npm install
-
-#COPY . .
 
 # Build the Node.js application
 RUN npm run build
 
-# Stage 2: Serve the application using Apache
+######################## Run Stage: Serve the application using Apache #######################
 FROM httpd:2.4
 
 # Create a new directory
