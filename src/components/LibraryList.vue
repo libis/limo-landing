@@ -38,7 +38,7 @@
       <div v-if="fave != ''" class="level" style="padding-top:0rem;">
         <div class="level-left">     
           <div class="level-item">
-            <div class="block" style="max-widh:100%;overflow: hidden;">              
+            <div class="block" style="max-width:100%;overflow: hidden;">              
               <a  :title="fave.name" v-if="!fave.fullurl" class="has-text-weight-semibold button is-warning" :href="'https://'+fave.code+'.limo.libis.be/discovery/search?vid='+fave.vidve">       
                 <span class="icon" ><i class="fas fa-star"></i></span>         
                 <span><span style="font-weight:300;margin-right:0.5rem;">Last visited: </span>                  
@@ -165,7 +165,6 @@ export default {
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Nationale Bank van België', code: 'NBB', vid: 'NBB', width: '120px', display: true, vidve:'32KUL_NBB:NBB',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'SPF BOSA/FOD BOSA', code: 'bosa', vid: 'OFO', width: '60px', display: true, vidve:'32KUL_TIFA:BOSA',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Koninklijk Belgisch Instituut voor Natuurwetenschappen', code: 'RBINS', vid: 'RBINS', width: '120px', display: true, vidve:'32KUL_RBINS:RBINS',fullurl:''},
-            {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Koninklijk Museum voor Midden-Afrika', code: 'RMCA', vid: 'RMCA', width: '60px', display: true, vidve:'32KUL_RMCA:RMCA',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Vesalius Documentation and Information Center', code: 'VDIC', vid: 'VDIC', width: '100px', display: true, vidve:'32KUL_VES:VDIC',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Parlementair Informatiecentrum van het Vlaams Parlement', code: 'VLP', vid: 'VLP', width: '100px', display: true, vidve:'32KUL_VLP:VLP',fullurl:''},
             {group: 'libisnet', inst_group: 'reli', sort: '', name_en: '', name: 'Documentatie- en Onderzoekscentrum voor Religie, Cultuur en Samenleving', code: 'KADOC', vid: 'KADOC', width: '80px', display: true, vidve:'32KUL_KADOC:KADOC',fullurl:'https://kadoc.limo.libis.be/'},
