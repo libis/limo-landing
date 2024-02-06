@@ -178,7 +178,6 @@ export default {
             {group: 'libisnet', inst_group: 'bibl', sort: '', name_en: '', name: 'Jesuit Armarium', code: 'kadoc', vid: 'JESUITS', width: '80px', display: true, vidve:'32KUL_KUL:JESUITS',fullurl:'https://network.limo.libis.be/discovery/search?&vid=32KUL_LIBIS_NETWORK:JESUITS_UNION'},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Documentatiecentrum Vlaams-Brabant', code: 'docvlaamsbrabant', vid: 'docvlaamsbrabant', width: '80px', display: true, vidve:'32KUL_DOCVB:docvlaamsbrabant',fullurl:''},
 
-
         ]);
 
         return {
