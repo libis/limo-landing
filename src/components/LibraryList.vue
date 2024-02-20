@@ -179,7 +179,6 @@ export default {
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Documentatiecentrum Vlaams-Brabant', code: 'docvlaamsbrabant', vid: 'docvlaamsbrabant', width: '80px', display: true, vidve: '32KUL_DOCVB:docvlaamsbrabant', fullurl: '' },
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Vlerick Business School', code: 'vlerick', vid: 'VBS', width: '80px', display: true, vidve: '32KUL_VLER:VBS', fullurl: 'https://vlerick.limo.libis.be/discovery/search?vid=32KUL_VLER:VBS' },
 
-
         ]);
 
         return {
