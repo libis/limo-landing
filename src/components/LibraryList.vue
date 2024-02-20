@@ -176,7 +176,8 @@ export default {
             {group: 'libisnet', inst_group: 'bibl', sort: '', name_en: '', name: 'Lirias', code: 'kuleuven', vid: 'Lirias', width: '90px', display: true, vidve:'32KUL_KUL:Lirias',fullurl:''},
             {group: 'libisnet', inst_group: 'bibl', sort: '', name_en: '', name: 'DokS', code: 'kuleuven', vid: 'DOKS', width: '80px', display: true, vidve:'32KUL_LIBIS_NETWORK:DOKS_UNION',fullurl:''},
             {group: 'libisnet', inst_group: 'bibl', sort: '', name_en: '', name: 'Jesuit Armarium', code: 'kadoc', vid: 'JESUITS', width: '80px', display: true, vidve:'32KUL_KUL:JESUITS',fullurl:'https://network.limo.libis.be/discovery/search?&vid=32KUL_LIBIS_NETWORK:JESUITS_UNION'},
-            {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Documentatiecentrum Vlaams-Brabant', code: 'docvlaamsbrabant', vid: 'docvlaamsbrabant', width: '80px', display: true, vidve:'32KUL_DOCVB:docvlaamsbrabant',fullurl:''},
+            {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Documentatiecentrum Vlaams-Brabant', code: 'docvlaamsbrabant', vid: 'docvlaamsbrabant', width: '80px', display: true, vidve: '32KUL_DOCVB:docvlaamsbrabant', fullurl: '' },
+            {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Vlerick Business School', code: 'vlerick', vid: 'VBS', width: '80px', display: true, vidve: '32KUL_VLER:VBS', fullurl: 'https://vlerick.limo.libis.be/discovery/search?vid=32KUL_VLER:VBS' },
 
 
         ]);
