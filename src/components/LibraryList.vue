@@ -152,7 +152,6 @@ export default {
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Federale Parlement fédéral', code: 'BPB', vid: 'BPB', width: '180px', display: true, vidve:'32KUL_BPB:BPB',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'FARO', code: 'FARO', vid: 'FARO', width: '60px', display: true, vidve:'32KUL_VCV:FARO',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Federale Overheidsdienst Financiën', code: 'fin', vid: 'FODFIN', width:'120px', display: true, vidve:'32KUL_FIN:FODFIN',fullurl:''},
-            {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'IMEC', code: 'IMEC', vid: 'IMEC', width: '60px', display: true, vidve:'32KUL_IMEC:IMEC',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'KBC', code: 'KBC', vid: 'KBC', width: '60px', display: true, vidve:'32KUL_KBC:KBC',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Koninklijke Musea voor Kunst en Geschiedenis', code: 'KMKG', vid: 'KMKG', width: '90px', display: true, vidve:'32KUL_KMMR:KMKG',fullurl:''},
             {group: 'kuleuven', inst_group: 'kulloc,KULeuven_regio)', sort: 0, name_en: '', name: 'KU Leuven', code: 'KULeuven', vid: 'KULeuven', width: '80px', display: true, vidve:'32KUL_KUL:KULeuven',fullurl:'https://kuleuven.limo.libis.be/'},
