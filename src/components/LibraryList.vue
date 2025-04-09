@@ -161,6 +161,7 @@ export default {
             {group: 'kuleuven', inst_group: 'tmore', sort: 11, name_en: '', name: 'Thomas More Antwerpen, Mechelen, Sint-Katelijne-Waver', code: 'mechelen-antwerpen.thomasmore', vid: 'TMOREM', width: '80px', display: true, vidve:'32KUL_KHM:TMOREMA',fullurl:''},
             {group: 'kuleuven', inst_group: 'ucll', sort: 12, name_en: '', name: 'UCLL', code: 'UCLL', vid: 'UCLL', width: '80px', display: true, vidve:'32KUL_KHL:UCLL',fullurl:''},
             {group: 'kuleuven', inst_group: 'vives', sort: 14, name_en: '', name: 'VIVES', code: 'VIVES', vid: 'VIVES', width: '80px', display: true, vidve:'32KUL_KATHO:VIVES',fullurl:''},
+            {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Sportimonium', code: 'sportimonium', vid: 'sportimonium', width: '80px', display: true, vidve:'32KUL_KUL:sportimonium',fullurl:'https://network.limo.libis.be/discovery/search?vid=32KUL_KUL:sportimonium'},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Nationale Bank van België', code: 'NBB', vid: 'NBB', width: '120px', display: true, vidve:'32KUL_NBB:NBB',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'SPF BOSA/FOD BOSA', code: 'bosa', vid: 'OFO', width: '60px', display: true, vidve:'32KUL_TIFA:BOSA',fullurl:''},
             {group: 'libisnet', inst_group: '', sort: '', name_en: '', name: 'Koninklijk Belgisch Instituut voor Natuurwetenschappen', code: 'RBINS', vid: 'RBINS', width: '120px', display: true, vidve:'32KUL_RBINS:RBINS',fullurl:''},
