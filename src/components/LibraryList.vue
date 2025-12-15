@@ -685,7 +685,7 @@ export default {
         width: "100px",
         display: true,
         vidve: "32KUL_LIBS:PLEC",
-        fullurl: "plec.limo.libis.be",
+        fullurl: "https://plec.limo.libis.be",
       },
     ]);
 
