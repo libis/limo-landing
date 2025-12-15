@@ -674,6 +674,19 @@ export default {
         fullurl:
           "https://rvaonem.limo.libis.be/discovery/search?vid=32KUL_LIBS:RVAONEM",
       },
+      {
+        group: "libisnet",
+        inst_group: "",
+        sort: "",
+        name_en: "",
+        name: "PLEC",
+        code: "plec",
+        vid: "PLEC",
+        width: "100px",
+        display: true,
+        vidve: "32KUL_LIBS:PLEC",
+        fullurl: "plec.limo.libis.be",
+      },
     ]);
 
     return {
